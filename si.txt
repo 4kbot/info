@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<host>
+  <hostname>
+          usrv20-geronimors
+  </hostname>
+  <hosts>
+<![CDATA[
+127.0.0.1 localhost
+127.0.1.1 usrv20-geronimors
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+]]>
+  </hosts>
+  <dns>
+<![CDATA[
+nameserver 10.211.101.20
+nameserver 10.200.0.20
+search informatica.cifpaviles.pa
+]]>
+  </dns>
+  <netplan>
+<![CDATA[
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    ens160:
+      addresses:
+      - 10.35.28.220/24
+      gateway4: 10.35.28.1
+      nameservers:
+        addresses:
+        - 10.211.101.20
+        - 10.200.0.20
+        search:
+        - informatica.cifpaviles.pa
+  version: 2
+]]>
+  </netplan>
+  <particionamiento>
+<![CDATA[
+Disk /dev/loop0: 61,98 MiB, 64966656 bytes, 126888 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop1: 46,98 MiB, 49242112 bytes, 96176 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop2: 67,83 MiB, 71106560 bytes, 138880 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+
+
+Disk /dev/sda: 15 GiB, 16106127360 bytes, 31457280 sectors
+Disk model: Virtual disk    
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 0B142EA6-528B-48EC-839E-F9A1930385FC
+
+Device       Start      End  Sectors  Size Type
+/dev/sda1     2048     4095     2048    1M BIOS boot
+/dev/sda2     4096  3674111  3670016  1,8G Linux filesystem
+/dev/sda3  3674112 31455231 27781120 13,3G Linux filesystem
+
+
+Disk /dev/mapper/ubuntu--vg-ubuntu--lv: 10 GiB, 10737418240 bytes, 20971520 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+]]>
+  </particionamiento>
+  <ram>
+MemTotal:        1000256 kB
+  </ram>
+  <usuario>
+administrador:x:1000:1000:yo:/home/administrador:/bin/bash
+  </usuario>
+  <sudo>
+sudo:x:27:administrador
+  </sudo>
+  <vmwaretools>
+root         860  0.1  0.7 161948  7616 ?        Ssl  12:44   0:17 /usr/bin/vmtoolsd
+  </vmwaretools>
+  <antivirus>
+  </antivirus>
+  <ssh>
+● ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)
+     Active: active (running) since Fri 2022-11-25 12:46:45 UTC; 3h 29min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 1732 (sshd)
+      Tasks: 1 (limit: 1066)
+     Memory: 1.1M
+     CGroup: /system.slice/ssh.service
+             └─1732 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+
+nov 25 12:46:45 usrv20-geronimors systemd[1]: ssh.service: Succeeded.
+nov 25 12:46:45 usrv20-geronimors systemd[1]: Stopped OpenBSD Secure Shell server.
+nov 25 12:46:45 usrv20-geronimors systemd[1]: Starting OpenBSD Secure Shell server...
+nov 25 12:46:45 usrv20-geronimors sshd[1732]: Server listening on 0.0.0.0 port 22.
+nov 25 12:46:45 usrv20-geronimors sshd[1732]: Server listening on :: port 22.
+nov 25 12:46:45 usrv20-geronimors systemd[1]: Started OpenBSD Secure Shell server.
+  </ssh>
+  <repositorios>
+<![CDATA[
+# deb-src http://archive.ubuntu.com/ubuntu focal-security universe
+deb http://archive.ubuntu.com/ubuntu focal-security multiverse
+# deb-src http://archive.ubuntu.com/ubuntu focal-security multiverse
+]]>
+  </repositorios>
+</host>
